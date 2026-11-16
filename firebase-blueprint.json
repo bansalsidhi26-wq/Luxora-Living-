@@ -1,0 +1,542 @@
+{
+  "entities": {
+    "AdminUser": {
+      "title": "AdminUser",
+      "description": "Authorized studio administrator profile for role-based access control.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 200
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "role": {
+          "type": "string",
+          "enum": ["admin"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["email", "role", "createdAt"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Luxury interior design portfolio project.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "category": {
+          "type": "string",
+          "enum": ["Residential", "Penthouse", "Kitchen & Bath", "Hospitality"]
+        },
+        "location": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "year": {
+          "type": "string",
+          "maxLength": 10
+        },
+        "area": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "style": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "challenge": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "solution": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "imageUrl": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "order": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["title", "category", "location", "year", "area", "style", "summary", "imageUrl", "featured", "order", "createdAt", "updatedAt"]
+    },
+    "Service": {
+      "title": "Service",
+      "description": "Interior design studio service offering.",
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string",
+          "maxLength": 10
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "deliverables": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "duration": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "order": {
+          "type": "number"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["number", "title", "description", "deliverables", "duration", "order", "updatedAt"]
+    },
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "Attributable client testimonial.",
+      "type": "object",
+      "properties": {
+        "clientName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "clientRole": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "projectTitle": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "quote": {
+          "type": "string",
+          "maxLength": 800
+        },
+        "order": {
+          "type": "number"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["clientName", "clientRole", "projectTitle", "quote", "order", "updatedAt"]
+    },
+    "SiteContent": {
+      "title": "SiteContent",
+      "description": "Editable landing copy, studio contact details, and theme settings.",
+      "type": "object",
+      "properties": {
+        "heroHeadline": {
+          "type": "string",
+          "maxLength": 180
+        },
+        "heroSubtitle": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "aboutTitle": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "aboutDescription": {
+          "type": "string",
+          "maxLength": 1200
+        },
+        "studioEmail": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "studioPhone": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "whatsappNumber": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "studioAddress": {
+          "type": "string",
+          "maxLength": 240
+        },
+        "studioHours": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "defaultTheme": {
+          "type": "string",
+          "enum": ["light", "dark", "system"]
+        },
+        "heroImageUrl": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "announcementEnabled": {
+          "type": "boolean"
+        },
+        "announcementText": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "promoEnabled": {
+          "type": "boolean"
+        },
+        "promoTitle": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "promoSubtitle": {
+          "type": "string",
+          "maxLength": 400
+        },
+        "promoCtaText": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "promoImageUrl": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "productCategories": {
+          "type": "array",
+          "description": "Curated collection categories"
+        },
+        "featuredCollectionTitle": {
+          "type": "string",
+          "maxLength": 140
+        },
+        "featuredCollectionSubtitle": {
+          "type": "string",
+          "maxLength": 400
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["heroHeadline", "heroSubtitle", "aboutTitle", "aboutDescription", "studioEmail", "studioPhone", "whatsappNumber", "studioAddress", "studioHours", "defaultTheme", "updatedAt"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Curated furniture, lighting, or bespoke interior piece managed in the admin dashboard.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 140
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 1200
+        },
+        "price": {
+          "type": "number"
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "stock": {
+          "type": "number"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "imageUrl": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["name", "description", "price", "category", "stock", "available", "imageUrl", "featured", "createdAt", "updatedAt"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer acquisition order for curated studio pieces containing PII.",
+      "type": "object",
+      "properties": {
+        "orderNumber": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "customerId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "customerName": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "customerEmail": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 180
+        },
+        "customerPhone": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "shippingAddress": {
+          "type": "string",
+          "maxLength": 400
+        },
+        "items": {
+          "type": "array",
+          "description": "Ordered product line items"
+        },
+        "totalAmount": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "processing", "shipped", "delivered", "cancelled"]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["orderNumber", "customerName", "customerEmail", "customerPhone", "shippingAddress", "items", "totalAmount", "status", "createdAt", "updatedAt"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Registered customer profile containing PII.",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 180
+        },
+        "phone": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "address": {
+          "type": "string",
+          "maxLength": 400
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["fullName", "email", "createdAt", "updatedAt"]
+    },
+    "Consultation": {
+      "title": "Consultation",
+      "description": "Client private consultation booking request containing PII.",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 180
+        },
+        "phone": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "projectType": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "propertySize": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "budgetRange": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "preferredStyle": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "preferredDate": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "message": {
+          "type": "string",
+          "maxLength": 1500
+        },
+        "status": {
+          "type": "string",
+          "enum": ["new", "scheduled", "completed", "archived"]
+        },
+        "adminNotes": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["fullName", "email", "phone", "projectType", "budgetRange", "preferredStyle", "status", "createdAt", "updatedAt"]
+    },
+    "Enquiry": {
+      "title": "Enquiry",
+      "description": "General customer enquiry from contact section or LUXORA AI assistant.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 180
+        },
+        "phone": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "subject": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "message": {
+          "type": "string",
+          "maxLength": 1500
+        },
+        "source": {
+          "type": "string",
+          "enum": ["contact", "ai_assistant"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["unread", "replied", "archived"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["name", "email", "subject", "message", "source", "status", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/admins/{uid}": {
+      "schema": { "$ref": "#/entities/AdminUser" },
+      "description": "Authorized administrator accounts."
+    },
+    "/projects/{projectId}": {
+      "schema": { "$ref": "#/entities/Project" },
+      "description": "Publicly viewable portfolio projects managed by studio admins."
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Publicly viewable curated pieces managed by studio admins."
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Customer orders containing PII (admin-only read/manage)."
+    },
+    "/customers/{customerId}": {
+      "schema": { "$ref": "#/entities/Customer" },
+      "description": "Registered customer profiles containing PII (admin-only read/manage)."
+    },
+    "/services/{serviceId}": {
+      "schema": { "$ref": "#/entities/Service" },
+      "description": "Publicly viewable design services managed by studio admins."
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": { "$ref": "#/entities/Testimonial" },
+      "description": "Publicly viewable client testimonials managed by studio admins."
+    },
+    "/site_content/{docId}": {
+      "schema": { "$ref": "#/entities/SiteContent" },
+      "description": "Global site content, studio contact info, banners, announcements, and theme configuration."
+    },
+    "/consultations/{consultationId}": {
+      "schema": { "$ref": "#/entities/Consultation" },
+      "description": "Private consultation booking submissions (admin-only read/manage)."
+    },
+    "/enquiries/{enquiryId}": {
+      "schema": { "$ref": "#/entities/Enquiry" },
+      "description": "Customer enquiries from contact form or AI assistant (admin-only read/manage)."
+    }
+  }
+}

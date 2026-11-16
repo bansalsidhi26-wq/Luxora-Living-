@@ -1,0 +1,6 @@
+{
+  "name": "LUXORA LIVING",
+  "description": "Designing Spaces. Defining Elegance. Bespoke luxury residential, penthouse, and hospitality interior design studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
